@@ -5,15 +5,10 @@ Type=Class
 Version=7.51
 @EndOfDesignText@
 Sub Class_Globals
-	Public ImageUtils As BANanoObject
+	Public TextTure As BANanoObject
 End Sub
 
-public Sub Initialize As TDImageUtils
-	ImageUtils.Initialize2("THREE.ImageUtils", Null)
+public Sub LoadTexture(p As String) As TDImageUtils
+	TextTure.Initialize2("THREE.ImageUtils", Null).RunMethod("loadTexture", Array(p))
 	Return Me
-End Sub
-
-Public Sub LoadTexture(p As String) As BANanoObject
-	Dim bo As BANanoObject = ImageUtils.RunMethod("loadTexture", Array(p))
-	Return bo
 End Sub

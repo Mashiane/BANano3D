@@ -44,3 +44,8 @@ End Sub
 Sub requestAnimationFrame(cb As BANanoObject)
 	BANano.RunJavascriptMethod("requestAnimationFrame", Array(cb))
 End Sub
+
+Sub LoadTexture(p As String) As Object
+	Dim bo As Object = BANano.RunJavascriptMethod("THREE.ImageUtils.loadTexture", Array(p))
+	Return bo
+End Sub

@@ -50,14 +50,11 @@ Sub Init
 	cubeGeometry.Initialize(rnd1, rnd2, rnd3)
 	'******
 	'we use a mesh basic material
-	Dim cubeMaterial As TDMeshBasicMaterial
+	Dim cubeMaterial As TDMeshNormalMaterial
 	cubeMaterial.Initialize
 	
-	'add texture
-	cubeMaterial.SetMap(BANano3D.LoadTexture("./assets/wood_1-1024x1024.png"))
-	
 	Dim cube As TDMesh
-	cube.Initialize(cubeGeometry.BoxGeometry, cubeMaterial.MeshBasicMaterial)
+	cube.Initialize(cubeGeometry.BoxGeometry, cubeMaterial.MeshNormalMaterial)
 	cube.SetName("cube")
 	scene.add(cube.Mesh)
 	
@@ -68,7 +65,11 @@ Sub Init
 		
 	'add the output of the renderer to the html element
 	body.Append(renderer.GetDomElement)
-	
+	'
+	Dim e As BANanoEvent
+	Dim cb As BANanoObject = BANano.CallBack(Me, "setupKeyControls", Array(e))
+	body.AddEventListener("keydown", cb, True)
+	'
 	'render stuff
 	render
 	
@@ -76,8 +77,21 @@ End Sub
 
 Sub render
 	renderer.render(scene.Scene, camera.PerspectiveCamera)
+	BANano3D.requestAnimationFrame(BANano.CallBack(Me,"render", Null))
+End Sub
+
+Sub setupKeyControls(e As BANanoEvent)
 	'get the cube
 	Dim cube As TDMesh = scene.GetMeshByName("cube")
-	cube.IncrementRotationX(0.01)
-	BANano3D.requestAnimationFrame(BANano.CallBack(Me,"render", Null))
+	'
+	Select Case e.KeyCode
+	Case 37
+		cube.IncrementRotationX(0.2)
+	Case 38
+		cube.DecrementRotationZ(0.2)
+	Case 39
+		cube.DecrementRotationX(0.2)
+	Case 40
+		cube.IncrementRotationZ(0.2)
+	End Select	
 End Sub

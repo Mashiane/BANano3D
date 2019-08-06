@@ -6,41 +6,44 @@ File3=dat.gui.min.js
 File4=Projector.js
 File5=stats.min.js
 File6=three.js
+File7=wood_1-1024x1024.png
 FileGroup1=Default Group
 FileGroup2=Default Group
 FileGroup3=Default Group
 FileGroup4=Default Group
 FileGroup5=Default Group
 FileGroup6=Default Group
+FileGroup7=Default Group
 Group=Default Group
 Library1=jcore
 Library2=jfx
 Library3=banano
 Library4=bananopostprocessor
-Module1=pgLesson006
-Module10=BANano3D
-Module11=pgLesson004
-Module12=TDBoxGeometry
-Module13=TDMeshNormalMaterial
-Module14=TDPerspectiveCamera
-Module15=UOEHTML
-Module16=TDCSS3DObject
-Module17=TDColor
-Module18=pgLesson007
-Module19=TDDatUI
-Module2=TDStats
-Module20=TDImageUtils
-Module21=pgLesson008
-Module3=pgLesson005
-Module4=pgLesson002
-Module5=pgLesson003
-Module6=pgIndex
-Module7=TDWebGLRenderer
-Module8=TDMesh
-Module9=TDScene
-NumberOfFiles=6
+Module1=pgLesson008
+Module10=TDMesh
+Module11=TDScene
+Module12=BANano3D
+Module13=pgLesson004
+Module14=TDBoxGeometry
+Module15=TDMeshNormalMaterial
+Module16=TDPerspectiveCamera
+Module17=UOEHTML
+Module18=TDCSS3DObject
+Module19=TDColor
+Module2=pgLesson007
+Module20=TDDatUI
+Module21=TDMeshBasicMaterial
+Module22=pgLesson009
+Module3=pgLesson006
+Module4=TDStats
+Module5=pgLesson005
+Module6=pgLesson002
+Module7=pgLesson003
+Module8=pgIndex
+Module9=TDWebGLRenderer
+NumberOfFiles=7
 NumberOfLibraries=4
-NumberOfModules=21
+NumberOfModules=22
 Version=7.51
 @EndOfDesignText@
 #Region Project Attributes 
@@ -103,5 +106,7 @@ Sub BANano_Ready
 	'pgLesson004.Init
 	'pgLesson005.Init
 	'pgLesson006.Init
-	pgLesson007.Init 
+	'pgLesson007.Init 
+	'pgLesson008.init
+	pgLesson009.Init
 End Sub

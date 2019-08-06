@@ -18,3 +18,7 @@ Sub SetTransparent(b As Boolean) As TDMeshNormalMaterial
 	Return Me
 End Sub
 
+Sub SetMap(bo As Object) As TDMeshNormalMaterial
+	MeshNormalMaterial.SetField("map", bo)
+	Return Me
+End Sub
