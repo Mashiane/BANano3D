@@ -2,35 +2,45 @@
 Build1=Default,b4j.example
 File1=CanvasRenderer.js
 File2=CSS3DRenderer.js
-File3=Projector.js
-File4=three.js
+File3=dat.gui.min.js
+File4=Projector.js
+File5=stats.min.js
+File6=three.js
 FileGroup1=Default Group
 FileGroup2=Default Group
 FileGroup3=Default Group
 FileGroup4=Default Group
+FileGroup5=Default Group
+FileGroup6=Default Group
 Group=Default Group
 Library1=jcore
 Library2=jfx
 Library3=banano
 Library4=bananopostprocessor
-Module1=pgIndex
-Module10=UOEHTML
-Module11=TDCSS3DObject
-Module12=TDColor
-Module13=BANano3D
-Module14=pgLesson005
-Module15=pgLesson004
-Module2=TDScene
-Module3=TDWebGLRenderer
-Module4=TDBoxGeometry
-Module5=TDMeshNormalMaterial
-Module6=TDMesh
-Module7=TDPerspectiveCamera
-Module8=pgLesson002
-Module9=pgLesson003
-NumberOfFiles=4
+Module1=pgLesson006
+Module10=BANano3D
+Module11=pgLesson004
+Module12=TDBoxGeometry
+Module13=TDMeshNormalMaterial
+Module14=TDPerspectiveCamera
+Module15=UOEHTML
+Module16=TDCSS3DObject
+Module17=TDColor
+Module18=pgLesson007
+Module19=TDDatUI
+Module2=TDStats
+Module20=TDImageUtils
+Module21=pgLesson008
+Module3=pgLesson005
+Module4=pgLesson002
+Module5=pgLesson003
+Module6=pgIndex
+Module7=TDWebGLRenderer
+Module8=TDMesh
+Module9=TDScene
+NumberOfFiles=6
 NumberOfLibraries=4
-NumberOfModules=15
+NumberOfModules=21
 Version=7.51
 @EndOfDesignText@
 #Region Project Attributes 
@@ -60,6 +70,8 @@ Sub AppStart (Form1 As Form, Args() As String)
 	BANano.Header.AddJavascriptFile("Projector.js")
 	'use css renderer
 	BANano.Header.AddJavascriptFile("CSS3DRenderer.js")
+	BANano.Header.AddJavascriptFile("stats.min.js")
+	BANano.Header.AddJavascriptFile("dat.gui.min.js")
 	
 	'BANano.TranspilerOptions.MergeAllCSSFiles = True
 	'BANano.TranspilerOptions.MergeAllJavascriptFiles = True
@@ -88,6 +100,8 @@ Sub BANano_Ready
 	'pgIndex.init
 	'pgLesson002.Init 
 	'pgLesson003.Init
-	pgLesson004.Init
+	'pgLesson004.Init
 	'pgLesson005.Init
+	'pgLesson006.Init
+	pgLesson007.Init 
 End Sub

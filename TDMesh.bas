@@ -18,6 +18,11 @@ Sub SetName(n As String) As TDMesh
 	Return Me
 End Sub
 
+Sub GetScale As BANanoObject
+	Dim scale As BANanoObject = Mesh.GetField("scale")
+	Return scale
+End Sub
+
 Sub GetRotation As BANanoObject
 	Dim rot As BANanoObject = Mesh.GetField("rotation")
 	Return rot
@@ -32,6 +37,11 @@ Sub GetRotationX As Double
 	Dim rot As BANanoObject = GetRotation
 	Dim x As Double = rot.GetField("x")
 	Return x
+End Sub
+
+Sub SetScale(var1 As Double, var2 As Double, var3 As Double)
+	Dim scale As BANanoObject = GetScale
+	scale.RunMethod("set", Array(var1, var2, var3))
 End Sub
 
 Sub SetRotationX(x As Double)

@@ -12,3 +12,9 @@ Public Sub Initialize As TDMeshNormalMaterial
 	MeshNormalMaterial.Initialize2("THREE.MeshNormalMaterial", Null)
 	Return Me
 End Sub
+
+Sub SetTransparent(b As Boolean) As TDMeshNormalMaterial
+	MeshNormalMaterial.SetField("transparent", b)
+	Return Me
+End Sub
+
