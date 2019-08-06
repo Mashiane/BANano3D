@@ -8,8 +8,21 @@ Sub Class_Globals
 	Public WebGLRenderer As BANanoObject
 End Sub
 
+'initialize webgl renderer
 Public Sub Initialize As TDWebGLRenderer
 	WebGLRenderer.Initialize2("THREE.WebGLRenderer",Null)
+	Return Me
+End Sub
+
+'initialize canvas renderer
+public Sub InitializeCanvas As TDWebGLRenderer
+	WebGLRenderer.Initialize2("THREE.CanvasRenderer",Null)
+	Return Me
+End Sub
+
+'initialize css3d renderer
+public Sub InitializeCSS3D As TDWebGLRenderer
+	WebGLRenderer.Initialize2("THREE.CSS3DRenderer", Null)
 	Return Me
 End Sub
 

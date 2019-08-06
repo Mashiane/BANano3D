@@ -22,3 +22,16 @@ Sub GetPosition() As BANanoObject
 	Dim bo As BANanoObject = Scene.GetField("position")
 	Return bo
 End Sub
+
+Sub getObjectByName(n As String) As BANanoObject
+	Dim bo As BANanoObject = Scene.RunMethod("getObjectByName", Array(n))
+	Return bo
+End Sub
+
+Sub GetMeshByName(name As String) As TDMesh
+	Dim oldmesh As BANanoObject = getObjectByName(name)
+	'assign object to a new mesh
+	Dim mesh As TDMesh
+	mesh.SetMesh(oldmesh)
+	Return mesh
+End Sub

@@ -36,7 +36,7 @@ Sub Init
 	' camera, what we will see
 	camera.Initialize(45, WindowInnerWidth / WindowInnerHeight, 0.1, 1000)
 	
-	'create a WEBGL renderer, set background and size
+	'create a CANVAS renderer, set background and size
 	renderer.Initialize
 	renderer.setClearColor("0x000000", 1.0)
 	renderer.setSize(WindowInnerWidth, WindowInnerHeight)
@@ -55,6 +55,7 @@ Sub Init
 	
 	Dim cube As TDMesh
 	cube.Initialize(cubeGeometry.BoxGeometry, cubeMaterial.MeshNormalMaterial)
+	cube.SetName("cube")
 	scene.add(cube.Mesh)
 	
 	'
@@ -65,7 +66,15 @@ Sub Init
 	'add the output of the renderer to the html element
 	body.Append(renderer.GetDomElement)
 	'render stuff
+	render
+	
+End Sub
+
+Sub render
 	renderer.render(scene.Scene, camera.PerspectiveCamera)
-	
-	
+	'get the cube
+	Dim cube As TDMesh = scene.GetMeshByName("cube")
+	cube.IncrementRotationX(0.05)
+	'
+	BANano3D.requestAnimationFrame(BANano.CallBack(Me,"render", Null))
 End Sub

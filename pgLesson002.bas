@@ -36,8 +36,8 @@ Sub Init
 	' camera, what we will see
 	camera.Initialize(45, WindowInnerWidth / WindowInnerHeight, 0.1, 1000)
 	
-	'create a WEBGL renderer, set background and size
-	renderer.Initialize
+	'create a CANVAS renderer, set background and size
+	renderer.InitializeCanvas
 	renderer.setClearColor("0x000000", 1.0)
 	renderer.setSize(WindowInnerWidth, WindowInnerHeight)
 	

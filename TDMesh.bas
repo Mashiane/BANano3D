@@ -12,3 +12,38 @@ Public Sub Initialize(var1 As BANanoObject, var2 As BANanoObject) As TDMesh
 	Mesh.Initialize2("THREE.Mesh", Array(var1, var2))
 	Return Me
 End Sub
+
+Sub SetName(n As String) As TDMesh
+	Mesh.SetField("name", n)
+	Return Me
+End Sub
+
+Sub GetRotation As BANanoObject
+	Dim rot As BANanoObject = Mesh.GetField("rotation")
+	Return rot
+End Sub
+
+Sub SetMesh(bo As BANanoObject) As TDMesh
+	Mesh = bo
+	Return Me
+End Sub
+
+Sub GetRotationX As Double
+	Dim rot As BANanoObject = GetRotation
+	Dim x As Double = rot.GetField("x")
+	Return x
+End Sub
+
+Sub SetRotationX(x As Double)
+	Dim rot As BANanoObject = GetRotation
+	rot.SetField("x", x)
+End Sub
+
+Sub IncrementRotationX(x As Double)
+	'get existing x rotation
+	Dim oldx As Double = GetRotationX
+	'increment the rotation
+	oldx = oldx + x
+	'update the rotation
+	SetRotationX(oldx)
+End Sub

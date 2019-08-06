@@ -1,22 +1,36 @@
 ﻿AppType=JavaFX
 Build1=Default,b4j.example
-File1=three.js
+File1=CanvasRenderer.js
+File2=CSS3DRenderer.js
+File3=Projector.js
+File4=three.js
 FileGroup1=Default Group
+FileGroup2=Default Group
+FileGroup3=Default Group
+FileGroup4=Default Group
 Group=Default Group
 Library1=jcore
 Library2=jfx
 Library3=banano
 Library4=bananopostprocessor
 Module1=pgIndex
+Module10=UOEHTML
+Module11=TDCSS3DObject
+Module12=TDColor
+Module13=BANano3D
+Module14=pgLesson005
+Module15=pgLesson004
 Module2=TDScene
 Module3=TDWebGLRenderer
 Module4=TDBoxGeometry
 Module5=TDMeshNormalMaterial
 Module6=TDMesh
 Module7=TDPerspectiveCamera
-NumberOfFiles=1
+Module8=pgLesson002
+Module9=pgLesson003
+NumberOfFiles=4
 NumberOfLibraries=4
-NumberOfModules=7
+NumberOfModules=15
 Version=7.51
 @EndOfDesignText@
 #Region Project Attributes 
@@ -39,8 +53,14 @@ Sub AppStart (Form1 As Form, Args() As String)
 	BANano.HTML_NAME = "index.html"
 	BANano.Header.Title = AppName
 	BANano.JAVASCRIPT_NAME = $"app${version}.js"$
-	'
+	'use WebGL
 	BANano.Header.AddJavascriptFile("three.js")
+	'use Canvas
+	BANano.Header.AddJavascriptFile("CanvasRenderer.js")
+	BANano.Header.AddJavascriptFile("Projector.js")
+	'use css renderer
+	BANano.Header.AddJavascriptFile("CSS3DRenderer.js")
+	
 	'BANano.TranspilerOptions.MergeAllCSSFiles = True
 	'BANano.TranspilerOptions.MergeAllJavascriptFiles = True
 	'BANano.TranspilerOptions.ShowWarningDeadCode = True
@@ -65,5 +85,9 @@ Sub Application_Error (Error As Exception, StackTrace As String) As Boolean
 End Sub
 
 Sub BANano_Ready
-	pgIndex.init
+	'pgIndex.init
+	'pgLesson002.Init 
+	'pgLesson003.Init
+	pgLesson004.Init
+	'pgLesson005.Init
 End Sub
